@@ -1,0 +1,110 @@
+/* Catalog Grid */
+
+.catalog{
+    display: grid;
+    grid-template-columns: repeat(12, 8.33%);
+}
+
+.search-container{
+    grid-column: span 12;
+    padding: .4rem;
+    border-bottom: 1px solid black;
+}
+
+.filter-container{
+    grid-column: span 2;
+    padding: .4rem;
+    max-height: calc(20% + 50svh);
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.catalog-container{
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    grid-column: span 10;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.pagination-container{
+    grid-column: 10 / span 3;
+    text-align: center;
+}
+
+
+/* Cards */
+
+.catalog-container>*{
+    box-sizing: border-box;
+    flex-basis: fit-content;
+}
+
+.card{
+    box-sizing: border-box;
+    margin: 1rem;
+    border: 4px solid transparent;
+    border-radius: .6rem;
+    max-width: 300px;
+}
+
+.card:hover{
+    border: 4px solid orange;
+}
+
+.card-container{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-container>*{
+    box-sizing: border-box;
+}
+
+.card-container>:not(.book-image){
+    flex: 1 0 100%;
+    padding: .2rem;
+}
+
+.book-image{
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+
+.book-image>img{
+    display: flex;
+    box-sizing: border-box;
+    height: 330px;
+    flex: 1 0 100%;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+}
+
+.card-container>.book-title{
+    font-size: 32px;
+    padding: .2rem;
+}
+
+.card-container>.book-author{
+}
+
+.card-container>.book-genre{
+    font-size: 12px;
+    font-style: italic;
+}
+
+.card-cta{
+    display: flex;
+    justify-content: center;
+    max-width: 10rem;
+    margin: .6rem;
+    padding: .2rem !important;
+    border: none;
+    background-color: lightgreen;
+    border-radius: 2rem;
+    font-size: 18px;
+}

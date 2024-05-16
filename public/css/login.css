@@ -1,0 +1,93 @@
+/* For The Log in side */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #D6DEF4;
+}
+.container{
+   display: flex;
+   height: 500px;
+   width: 800px;
+   /* border: 1px solid black; */
+   margin: auto;
+   margin-top: 120px;
+   box-shadow: 5px 5px 20px black; 
+   border-radius: 25px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    background-color: whitesmoke;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+.form h2{
+    font-size: 3rem;
+    font-family:'Times New Roman', Times, serif ;
+    margin: 40px;
+    color: #3343A0;
+}
+.box{
+    padding: 12px;
+    width: 65%;
+    margin: 15px;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 20px;
+}
+#submit{
+    padding: 12px;
+    width: 40%;
+    margin-top: 40px;
+    background-color: antiquewhite;
+    color: white;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    color: black;
+}
+#submit:hover{
+    cursor: pointer;
+    background-color: #3343A0;
+    color: antiquewhite;
+}
+.form a{
+    text-decoration: none;
+    color: black;
+    margin-top: 20px;
+}
+.form a:hover{
+    color: blue;
+}
+
+/* For the Right Side */
+
+.side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: #636CCD;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-sizing: border-box;
+    flex-wrap: wrap;    
+}
+.side h2{
+    margin-top: auto;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    font-size: 36px;
+    color: #EBEAD7;
+}
+.side img{
+    width: 300px;
+    height: 250px;
+    margin-bottom: 3rem;
+}
