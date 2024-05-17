@@ -28,11 +28,12 @@ return new class extends Migration
         });
         Schema::create('users', function(Blueprint $table){
             $table->id('user_id');
-            $table->string('user_name');
-            $table->longText('user_pass');
+            $table->string('user_role')->default('user');
+            $table->string('username')->unique();
+            $table->longText('password');
         });
         Schema::create('rented', function(Blueprint $table){
-            $table->uuid('rent_id');
+            $table->uuid('rent_id')->primary();
             $table->unsignedBigInteger('book_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamp('rent_date');

@@ -8,9 +8,9 @@ use Illuminate\View\View;
 class CatalogController extends Controller
 {
     public function collection(int $page): View{
-        $collection =  Book::select('*')->limit(5)->offset(($page - 1) * 5)->get();
+        $collection =  Book::select('*')->limit(4)->offset(($page - 1) * 4)->get();
         return view('catalogue', ['collection' => $collection,
-            'next' => (count($collection->toArray()) < 5) ? 1:$page+1,
+            'next' => (count($collection->toArray()) < 4) ? 1:$page+1,
             'prev' => ($page == 1) ? 0: $page-1]);
     }
 

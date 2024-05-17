@@ -17,6 +17,10 @@
             <div class="book-author">{{$book['book_author']}}</div>
             <div class="book-genre">{{$book['book_genre']}}</div>
         </div>
+        <form action="/rent">
+            <input type="text" name="id" value="{{$book['book_id']}}" hidden>
+            <button type="submit">Rent</button>
+        </form>
     </div>
 </body>
 </html>

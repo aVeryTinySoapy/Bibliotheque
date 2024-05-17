@@ -11,8 +11,8 @@
         <form action="/login/verify" method="post" class="form">
             @csrf
         <h2>Sign-in</h2>
-            <input type="text" id="user_name" name="user_name" class="box" placeholder="Enter username">
-            <input type="password" id="user_pass" name="user_pass" class="box" placeholder="Enter Password">
+            <input type="text" id="user_name" name="username" class="box" placeholder="Enter username">
+            <input type="password" id="user_pass" name="password" class="box" placeholder="Enter Password">
             <input type="submit" value="Sign-in" id="submit">
             <a href="/registration">Sign up</a>
         </form>

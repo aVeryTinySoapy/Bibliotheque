@@ -13,15 +13,11 @@ class RegistrationController extends Controller
     }
 
     function register(Request $request){
-        $credits = $request->validate([
-            'username' => ['required'],
-            'password' => ['required']
-        ]);
         $user = new User;
         $user->fill([
-            'user_name' => $credits['username'],
-            'user_pass' => bcrypt($credits['password'])
+            'username' => $request->username,
         ]);
+        $user->password = Hash::make($request->password);
         $user->save();
         return redirect()->intended('/login');
     }

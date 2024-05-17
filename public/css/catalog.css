@@ -46,6 +46,7 @@
     margin: 1rem;
     border: 4px solid transparent;
     border-radius: .6rem;
+    min-width: 300px;
     max-width: 300px;
 }
 

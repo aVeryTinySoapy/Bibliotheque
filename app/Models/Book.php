@@ -12,5 +12,13 @@ class Book extends Model
     protected $table = 'books';
     protected $primaryKey = 'book_id';
     protected $keyType = 'int';
-    public $incrementing = true;
+    public $timestamps = false;
+
+    protected $fillable = [
+      'book_title',
+      'book_author',
+      'book_genre',
+      'book_price',
+      'book_cover_img',
+    ];
 }
