@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "Rubik";
+    src: url('../resources/fonts/Rubik-variable.ttf');
+}
+
+@font-face {
+    font-family: "Rosarivo";
+    src: url('../resources/fonts/Rosarivo-Regular.ttf');
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+/* Logo */
+
+.logo-container{
+    display: flex;
+    align-items: center;
+}
+
+#logo{
+    width: 32px;
+    height: 32px;
+}
+
+#business-name{
+    font-size: 1.4rem;
+    font-family: Rosarivo, serif;
+}
+
+/* Navigation */
+.navigation-container{
+    display: flex;
+    padding: .6rem;
+    align-items: center;
+    background-image: linear-gradient(360deg, rgba(	240,191,239, 5%), rgb(224,218,252));
+    backdrop-filter: blur(1%);
+    box-shadow: 0 1px 4px rgba(0,0,0,30%);
+    border-bottom-left-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+}
+
+.navigation-items{
+    display: flex;
+    gap: 3rem;
+    margin: 0 0 0 auto;
+    padding-left: calc(2vw + 20px);
+    list-style: none;
+
+}
+
+.navigation-items>*{
+    font-size: .8rem;
+    padding: .5rem;
+    font-family: "Open Sans", serif;
+}
+
+.navigation-items>*:hover{
+    color: #4D88D8;
+    cursor: pointer;
+}
+
+/* Veil class on component enter*/
+.veil{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,50%);
+}
+
+.modal{
+    background-color: white;
+}

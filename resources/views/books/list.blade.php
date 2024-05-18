@@ -8,7 +8,7 @@
     <title>Books</title>
 </head>
 <body>
-
+<x-navigation/>
 <button onclick="document.location.href = '/books/add'">Add</button>
 <table id="table-genre">
     <tr>

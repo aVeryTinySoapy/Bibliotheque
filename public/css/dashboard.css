@@ -1,0 +1,7 @@
+.displayable-container{
+    grid-column: span 2;
+}
+
+.button-container{
+    grid-column: 11 / span 2;
+}

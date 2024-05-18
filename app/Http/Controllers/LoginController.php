@@ -17,10 +17,10 @@ class LoginController extends Controller
         if(Auth::attempt($input)){
             $request->session()->regenerate();
             if(User::where('username', $input['username'])->get()[0]->attributesToArray()['user_role'] == 'admin'){
-                return redirect()->intended('/dashboard');
+                return response()->json(['redirect' => 'admin']);
             }
-            return redirect()->intended('/catalogue/1');
+            return response()->json(['redirect' => 'user']);
         }
-        return back()->withErrors(['username' => 'Invalid credentials'])->onlyInput('username');
+        return response()->abort(442);
     }
 }

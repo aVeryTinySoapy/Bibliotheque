@@ -4,10 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LoginRequest extends FormRequest
+class RegistrationRequest extends FormRequest
 {
-
-    protected $redirect = '/login';
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -24,7 +22,7 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'username' => 'required|exists:users,username',
+            'username' => 'required',
             'password' => 'required'
         ];
     }
@@ -34,7 +32,6 @@ class LoginRequest extends FormRequest
         return [
             'username.required' => 'Enter a username!',
             'password.required' => 'Enter a password!',
-            'username.exists' => 'User does not exist!'
         ];
     }
 }

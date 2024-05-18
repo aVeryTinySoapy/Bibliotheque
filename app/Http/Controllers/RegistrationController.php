@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegistrationRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class RegistrationController extends Controller
@@ -12,13 +12,17 @@ class RegistrationController extends Controller
         return view('registration');
     }
 
-    function register(Request $request){
+    function register(RegistrationRequest $request){
+        $input = $request->validated();
         $user = new User;
         $user->fill([
-            'username' => $request->username,
+            'username' => $input['username'],
         ]);
-        $user->password = Hash::make($request->password);
+        $user->password = Hash::make($input['password']);
         $user->save();
-        return redirect()->intended('/login');
+        if($user->saveOrFail()){
+            return response()->json(['redirect' => true]);
+        }
+        return response()->abort(442);
     }
 }

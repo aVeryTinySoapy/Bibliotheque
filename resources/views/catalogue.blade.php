@@ -10,26 +10,32 @@
 </head>
 <body>
 
-    <div class="hero">
-        <span class="hero-title">Browse our collection of books</span>
-        <span class="hero-subtitle">Anything anywhere!</span>
-    </div>
+    <x-navigation/>
+
+    <section class="hero-browse">
+        <div class="hero-container">
+            <span class="hero-title">Browse our collection of books</span>
+            <span class="hero-subtitle">Start your book reading journey!</span>
+        </div>
+    </section>
+
     <div class="catalog">
         <div class="search-container">
-            <form action="">
+            <form id="search">
                 <input type="text">
                 <button type="submit">Search</button>
             </form>
         </div>
         <div class="filter-container">
-            <input type="checkbox" id="Fantasy" value="Fantasy">
-            <label for="fantasy">Fantasy</label>
-            <input type="checkbox" id="Romance" value="Fantasy">
-            <label for="Romance">Romance</label>
-            <input type="checkbox" id="Thriller" value="Fantasy">
-            <label for="Thriller">Thriller</label>
-            <input type="checkbox" id="Horror" value="Fantasy">
-            <label for="Horror">Horror</label>
+            <span class="genre-title">Genres</span>
+            <div class="genres">
+                @foreach($genres->all() as $genre)
+                    <div class="genre-row">
+                        <input type="checkbox" id="{{$genre['genre_name']}}" value="{{$genre['genre_name']}}">
+                        <label for="{{$genre['genre_name']}}">{{$genre['genre_name']}}</label>
+                    </div>
+                @endforeach
+            </div>
         </div>
         <div class="catalog-container">
                 @foreach($collection->all() as $book)

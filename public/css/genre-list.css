@@ -1,0 +1,49 @@
+.table-container{
+    display: flex;
+    justify-content: center;
+}
+
+[id*=table-]{
+    flex-basis: 80%;
+    margin: 1rem;
+    border-collapse: collapse;
+    overflow-y: auto;
+}
+
+[id*=table-]>tbody>tr>*{
+    padding: .4rem;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+[id*=table-]>tbody>:not(:first-child){
+    border: 1px solid rgba(0,0,0, 20%);
+}
+
+th{
+    background-color: #636CCD;
+}
+
+.table-actions{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.table-button{
+    padding: .4rem;
+    margin: 4px;
+    width: 4rem;
+    border-radius: .2rem;
+    box-shadow: 0 4px 0 black;
+    border: 1px solid black;
+}
+
+.table-actions>form>:first-child{
+    background-color: sandybrown;
+    color: white;
+}
+
+.table-actions>form>:last-child{
+    color: white;
+    background-color: darkred;
+}
