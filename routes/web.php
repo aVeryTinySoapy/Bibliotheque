@@ -21,18 +21,16 @@ Route::middleware(Logged::class)->group(function (){
     Route::middleware(verifyAdmin::class)->group(function (){
         Route::get('/dashboard', function () {return view('dashboard');});
         Route::get('/books/view', [BookController::class, 'fetch'])->name('books.list');
-        Route::get('/books/edit/{id}', [BookController::class, 'edit'])->name('books.update');
-        Route::get('/books/add', [BookController::class, 'add'])->name('books.add');
+        Route::post('/books/edit', [BookController::class, 'edit'])->name('books.update');
         Route::get('/books/delete/{id}', [BookController::class, 'delete'])->name('books.delete');
         Route::get('/genre/view', [GenreController::class, 'fetch'])->name('genres.list');
-        Route::get('/genre/edit/{id}', [GenreController::class, 'edit'])->name('genres.update');
-        Route::get('/genre/add', [GenreController::class, 'add'])->name('genres.add');
+        Route::post('/genre/edit', [GenreController::class, 'edit'])->name('genres.update');
         Route::get('/genre/delete/{id}', [GenreController::class, 'delete'])->name('genres.delete');
 
         //Actions
-        Route::post('/books/update/{id}', [BookController::class, 'update']);
+        Route::post('/books/update', [BookController::class, 'update']);
         Route::post('/books/insert', [BookController::class, 'insert'])->name('books.insert');
-        Route::post('/genre/update/{id}', [GenreController::class, 'update']);
+        Route::post('/genre/update', [GenreController::class, 'update']);
         Route::post('/genre/insert', [GenreController::class, 'insert'])->name('genres.insert');
     });
 });

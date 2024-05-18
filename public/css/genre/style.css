@@ -1,0 +1,9 @@
+.table-actions>.actions-container>:first-child{
+    background-color: sandybrown;
+    color: white;
+}
+
+.table-actions>.actions-container>:last-child{
+    color: white;
+    background-color: darkred;
+}

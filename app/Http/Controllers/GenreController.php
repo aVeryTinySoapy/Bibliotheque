@@ -23,20 +23,18 @@ class GenreController extends Controller
         Genre::create([
             'genre_name' => $input['name']
         ]);
-        return redirect()->intended('/genre/view');
+        return response()->json(['action' => 'success']);
     }
 
-    function edit(int $id){
-        return view('genres.update', ['genre' => Genre::findOrFail($id)->attributesToArray()]);
+    function edit(Request $request){
+        $name = Genre::find($request['name'])->attributesToArray()['genre_name'];
+        return response()->json(['name' => $name]);
     }
 
-    function update(int $id, Request $request){
-        $input = $request->validate([
-            'name' => ['required']
-        ]);
-        Genre::where('genre_id', $id)
-            ->update(['genre_name' => $input['name']]);
-        return redirect()->intended('/genre/view');
+    function update(Request $request){
+        Genre::where('genre_id', $request['id'])
+            ->update(['genre_name' => $request['name']]);
+        return response()->json(['action' => 'success']);
     }
 
     function delete(int $id){

@@ -4,7 +4,9 @@ function append_veil(){
     veil.className = 'veil';
     document.body.appendChild(veil);
     veil.addEventListener('click', function (e)  {
-        console.log('parent clicked')
+        setTimeout(() => {
+            veil.remove();
+        }, 1250);
         e.stopImmediatePropagation();
     });
 }

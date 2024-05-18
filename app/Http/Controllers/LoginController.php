@@ -21,6 +21,6 @@ class LoginController extends Controller
             }
             return response()->json(['redirect' => 'user']);
         }
-        return response()->abort(442);
+        return response()->abort(422);
     }
 }

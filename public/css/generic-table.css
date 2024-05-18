@@ -1,10 +1,27 @@
 .table-container{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+[id*=-add]{
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5rem;
+    flex: 0 1 100%;
+    max-width: 15vw;
+    margin: 2rem;
+    padding: .4rem;
+    border-radius: 2rem;
+    box-shadow: 4px 4px 0 black;
+    border: 1px solid black;
+    background-color: #4D88D8;
+    color: white;
+    outline: none;
+    cursor: pointer;
 }
 
 [id*=table-]{
-    flex-basis: 80%;
+    flex: 1 0 80%;
     margin: 1rem;
     border-collapse: collapse;
     overflow-y: auto;
@@ -29,21 +46,12 @@ th{
     justify-content: space-evenly;
 }
 
-.table-button{
+.table-btn{
     padding: .4rem;
     margin: 4px;
     width: 4rem;
     border-radius: .2rem;
     box-shadow: 0 4px 0 black;
     border: 1px solid black;
-}
-
-.table-actions>form>:first-child{
-    background-color: sandybrown;
-    color: white;
-}
-
-.table-actions>form>:last-child{
-    color: white;
-    background-color: darkred;
+    cursor: pointer;
 }

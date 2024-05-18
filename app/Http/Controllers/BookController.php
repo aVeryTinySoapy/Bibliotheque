@@ -11,11 +11,7 @@ class BookController extends Controller
 {
 
     function fetch(){
-        return view('books.list', ['collection' => Book::all()]);
-    }
-
-    function add(){
-        return view('books.add', ['genres' => Genre::all()]);
+        return view('books.list', ['collection' => Book::all(), 'genres' => Genre::all()]);
     }
 
     function insert(Request $request){
@@ -23,26 +19,27 @@ class BookController extends Controller
             'book_title' => $request['title'],
             'book_author' => $request['author'],
             'book_genre' => $request['genre'],
-            'book_price' => $request['price'],
+            'book_price' => 300,
             'book_cover_img' => $request['url'],
         ]);
-        return redirect()->intended('/books/view');
+        return response()->json(['action' => 'success']);
     }
 
-    function edit(int $id){
-        return view('books.update', ['book' => Book::findOrFail($id)->attributesToArray(), 'genres' => Genre::all()]);
+    function edit(Request $request){
+        $book = Book::find($request['id'])->attributesToArray();
+        return response()->json([$book]);
     }
 
-    function update(int $id, Request $request){
-        Book::where('book_id', $id)
+    function update(Request $request){
+        Book::where('book_id', $request['id'])
             ->update([
                 'book_title' => $request['title'],
                 'book_author' => $request['author'],
                 'book_genre' => $request['genre'],
-                'book_price' => $request['price'],
+                'book_price' => 300,
                 'book_cover_img' => $request['url'],
         ]);
-        return redirect()->intended('/books/view');
+        return response()->json(['action' => 'success']);
     }
 
     function delete(int $id){

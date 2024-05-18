@@ -13,7 +13,7 @@ function onAdd(){
             data.forEach((value, key) => {
                 list[key] = value;
             });
-            fetch('/genre/insert', {
+            fetch('/books/insert', {
                 method: 'post',
                 headers: {
                     'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
@@ -33,8 +33,8 @@ function onAdd(){
 }
 
 function onEdit(id){
-    let list = {'name': id}
-    fetch(`/genre/edit`, {
+    let list = {'id': id}
+    fetch(`/books/edit`, {
         method: 'post',
         headers: {
             'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
@@ -44,12 +44,15 @@ function onEdit(id){
         body: JSON.stringify(list)
     })
         .then(response => response.json())
-        .then(data => { // add existing name
+        .then(data => { //add existing things
             append_veil();
             let component = document.getElementById('template-edit');
             let child = component.content.cloneNode(true);
             getVeil().append(child);
-            document.querySelector('#genre-name').value = data.name;
+            document.querySelector('#title').value = data[0].book_title;
+            document.querySelector('#author').value = data[0].book_author;
+            document.querySelector('#genre').value = data[0].book_genre;
+            document.querySelector('#url').value = data[0].book_cover_img;
 
             document.querySelector('#modal-form')
                 .addEventListener('submit', evt => {
@@ -61,7 +64,7 @@ function onEdit(id){
                     data.forEach((value, key) => {
                         list[key] = value;
                     });
-                    fetch('/genre/update', {
+                    fetch('/books/update', {
                         method: 'post',
                         headers: {
                             'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
@@ -78,5 +81,6 @@ function onEdit(id){
                             }
                         });
                 });
+
         });
 }

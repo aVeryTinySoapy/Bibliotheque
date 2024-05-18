@@ -47,7 +47,6 @@
                             <span class="book-title">{{$book['book_title']}}</span>
                             <span class="book-author">{{$book['book_author']}}</span>
                             <span class="book-genre">{{$book['book_genre']}}</span>
-                            <span class="book-price">P {{$book['book_price']}}</span>
                         </div>
                     </div>
                 @endforeach
