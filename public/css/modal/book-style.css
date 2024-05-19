@@ -12,6 +12,7 @@ html,body{
     background-color: rgba(0,0,0,50%);
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
 }
 
 .modal{
@@ -68,6 +69,17 @@ html,body{
     outline: none;
 }
 
+.form-row>textarea{
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    padding: .3rem;
+    border-radius: 2rem;
+    border: 1px solid black;
+    box-shadow: 4px 4px 0 black;
+    outline: none;
+    resize: none;
+}
+
 #modal-submit{
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
@@ -85,6 +97,7 @@ html,body{
 .modal-title{
     font-family: Rosarivo, serif;
     font-size: 2rem;
+    margin-top: 4rem;
 }
 
 #btn-view{

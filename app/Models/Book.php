@@ -15,10 +15,11 @@ class Book extends Model
     public $timestamps = false;
 
     protected $fillable = [
-      'book_title',
-      'book_author',
-      'book_genre',
-      'book_price',
-      'book_cover_img',
+        'book_title',
+        'book_author',
+        'book_genre',
+        'book_desc',
+        'book_price',
+        'book_cover_img',
     ];
 }

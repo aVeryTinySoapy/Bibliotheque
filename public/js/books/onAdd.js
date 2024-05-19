@@ -52,6 +52,7 @@ function onEdit(id){
             document.querySelector('#title').value = data[0].book_title;
             document.querySelector('#author').value = data[0].book_author;
             document.querySelector('#genre').value = data[0].book_genre;
+            document.querySelector('#desc').value = data[0].book_desc;
             document.querySelector('#url').value = data[0].book_cover_img;
 
             document.querySelector('#modal-form')

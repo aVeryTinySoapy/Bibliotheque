@@ -19,6 +19,7 @@ class BookController extends Controller
             'book_title' => $request['title'],
             'book_author' => $request['author'],
             'book_genre' => $request['genre'],
+            'book_desc' => $request['desc'],
             'book_price' => 300,
             'book_cover_img' => $request['url'],
         ]);
@@ -36,6 +37,7 @@ class BookController extends Controller
                 'book_title' => $request['title'],
                 'book_author' => $request['author'],
                 'book_genre' => $request['genre'],
+                'book_desc' => $request['desc'],
                 'book_price' => 300,
                 'book_cover_img' => $request['url'],
         ]);

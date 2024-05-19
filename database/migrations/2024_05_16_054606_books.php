@@ -21,6 +21,7 @@ return new class extends Migration
             $table->longText('book_cover_img')->nullable();
             $table->string('book_title');
             $table->string('book_author');
+            $table->longText('book_desc')->nullable();
             $table->string('book_genre');
             $table->float('book_price');
             $table->foreign('book_genre','fk_book_genre')

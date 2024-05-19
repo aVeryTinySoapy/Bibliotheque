@@ -72,6 +72,10 @@
                     </select>
                 </div>
                 <div class="form-row">
+                    <label for="desc">Description</label>
+                    <textarea name="desc" id="desc"></textarea>
+                </div>
+                <div class="form-row">
                     <label for="url">Image URL</label>
                     <input id="url" type="text" name="url">
                 </div>
@@ -88,7 +92,7 @@
     <template id="template-edit">
         <div class="modal">
             <form id="modal-form">
-                <span class="modal-title">Add a book</span>
+                <span class="modal-title">Edit book</span>
                 <div class="form-row">
                     <label for="title">Title</label>
                     <input id="title" type="text" name="title">
@@ -105,6 +109,10 @@
                             <option value="{{$genre['genre_name']}}">{{$genre['genre_name']}}</option>
                         @endforeach
                     </select>
+                </div>
+                <div class="form-row">
+                    <label for="desc">Description</label>
+                    <textarea name="desc" id="desc"></textarea>
                 </div>
                 <div class="form-row">
                     <label for="url">Image URL</label>

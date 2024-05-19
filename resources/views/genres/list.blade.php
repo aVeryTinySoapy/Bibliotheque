@@ -76,6 +76,6 @@
     </template>
 
     <script src="{{asset('/js/veil.js')}}"></script>
-    <script src="{{asset('/js/genres/onAdd.js')}}">{{}}</script>
+    <script src="{{asset('/js/genres/onAdd.js')}}"></script>
 </body>
 </html>

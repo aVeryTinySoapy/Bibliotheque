@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrationController;
@@ -19,7 +20,7 @@ Route::middleware(Logged::class)->group(function (){
 
     // Admin
     Route::middleware(verifyAdmin::class)->group(function (){
-        Route::get('/dashboard', function () {return view('dashboard');});
+        Route::get('/dashboard', [DashboardController::class, 'fetch']);
         Route::get('/books/view', [BookController::class, 'fetch'])->name('books.list');
         Route::post('/books/edit', [BookController::class, 'edit'])->name('books.update');
         Route::get('/books/delete/{id}', [BookController::class, 'delete'])->name('books.delete');

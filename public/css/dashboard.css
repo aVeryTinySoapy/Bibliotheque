@@ -1,7 +1,51 @@
 .displayable-container{
-    grid-column: span 2;
+    display: flex;
+    grid-column: span 3;
+    grid-row: span 4;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 2rem;
+    border: 1px solid black;
+    box-shadow: 4px 4px 0 black;
+    max-height: calc(10% + 20vh);
+    margin: 1rem;}
+
+.displayable-title{
+    font-size: 1.5rem;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+}
+
+.displayable-data{
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
 }
 
 .button-container{
-    grid-column: 11 / span 2;
+    display: flex;
+    grid-row: 5;
+    grid-column: span 3;
+    padding: .4rem;
+    border: 1px solid black;
+    box-shadow: 4px 4px 0 black;
+    width: 100%;
+    max-width: calc(4% + 10vw);
+    border-radius: 2rem;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    cursor: pointer;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.4rem;
+    color: white;
+}
+
+#btn-books{
+    background-color: #4D88D8;
+}
+
+#btn-genres{
+    background-color: #636CCD;
 }
