@@ -36,6 +36,10 @@ Route::middleware(Logged::class)->group(function (){
     });
 });
 
+Route::get('/', function (){
+    return view('index');
+});
+
 // This here login
 Route::get('/login', [LoginController::class, 'page']);
 Route::post('/login/verify', [LoginController::class, 'authenticate']);
